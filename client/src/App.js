@@ -17,7 +17,7 @@ class App extends React.Component {
   }
   addNumber = (data) => {
     if (this.state.total) {
-      this.setState({selected: data.toString() , total: false});
+      this.setState({ selected: data.toString() , total: false });
       return;
     }
     if (this.state.selected === '0') {
@@ -28,11 +28,11 @@ class App extends React.Component {
     } 
   }
   addOperator = ( data) => {
-    if(data === '+') {
-      if(this.state.selected !== '0' && parseInt(this.state.selected.charAt(this.state.selected.length-1))) {
+    if (data === '+') {
+      if (this.state.selected !== '0' && parseInt(this.state.selected.charAt(this.state.selected.length-1))) {
           this.setState({ selected: this.state.selected + data });
       }
-    } else if(data === '-'){
+    } else if (data === '-'){
       if (this.state.selected !== '0' && parseInt(this.state.selected.charAt(this.state.selected.length-1))) {
         this.setState({ selected: this.state.selected + data });
       }
@@ -78,7 +78,7 @@ class App extends React.Component {
           this.setState({ selected: result.toString(), total: true});
       } else {
         const result = Math.sqrt(parseInt(this.state.selected));
-        if(result) {
+        if (result) {
           this.setState({ selected: result.toString(), total: true});
         } else {
           this.setState({ error: ' Imaginary Number ', total: true});
@@ -88,7 +88,7 @@ class App extends React.Component {
   }
   changeTheme = (theme) => {
     let body = document.getElementById('body');
-    if(theme === 'light') {
+    if (theme === 'light') {
         body.style.background = '#ffffff';
         this.setState({
             headerStyle: 'black-text',
